@@ -1,0 +1,62 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require 'eto'
+require 'eto/version'
+require 'thor'
+
+# rubocop: disable MethodLength
+module Eto
+  # = Eto CLI
+  class CLI < Thor
+    class_option :help, type: :boolean, aliases: '-h', desc: 'help message.'
+    class_option :version, type: :boolean, desc: 'version'
+    class_option :debug, type: :boolean, aliases: '-d', desc: 'debug mode'
+
+    desc 'names', 'get eto names'
+    def names
+      setting_debug_mode
+      puts Eto.names.join
+    rescue => e
+      output_error_if_debug_mode(e)
+      exit(false)
+    end
+
+    desc 'name', 'get eto name from year'
+    def name(year = 1970)
+      setting_debug_mode
+      puts Eto.name(year)
+    rescue => e
+      output_error_if_debug_mode(e)
+      exit(false)
+    end
+
+    desc 'emoji', 'get eto emoji from year'
+    def emoji(year = 1970)
+      setting_debug_mode
+      puts Eto.emoji(year)
+    rescue => e
+      output_error_if_debug_mode(e)
+      exit(false)
+    end
+
+    desc 'version', 'version'
+    def version
+      p Eto::VERSION
+    end
+
+    private
+
+    def setting_debug_mode
+      $DEBUG = options[:debug]
+    end
+
+    def output_error_if_debug_mode(e)
+      return unless options[:debug]
+      STDERR.puts(e.backtrace)
+    end
+  end
+end
+
+Eto::CLI.start(ARGV)
+# rubocop: enable MethodLength
