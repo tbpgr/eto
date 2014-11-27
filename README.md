@@ -2,6 +2,9 @@
 
 Get Eto (Japanese Zodiac) name or emoji.
 
+[![Build Status](https://travis-ci.org/tbpgr/eto.png?branch=master)](https://travis-ci.org/tbpgr/eto)
+[![Coverage Status](https://coveralls.io/repos/tbpgr/eto/badge.png)](https://coveralls.io/r/tbpgr/eto)
+
 ## Installation
 
 Add this line to your application's Gemfile:
