@@ -29,9 +29,9 @@ $ gem install ruboty-articlegen
 ### Commands (Command Line)
 |name|args|memo|
 |:--|:--|:--|
-|names|--|全ての干支を配列で返却|
-|name|year|year の干支名を取得|
-|emoji|year|year に対応する干支の emoji を取得|
+|names|--|全ての十二支を配列で返却|
+|name|year|year の十二支名を取得|
+|emoji|year|year に対応する十二支の emoji を取得|
 
 ## Usage ( Command Line Interface)
 ### names
