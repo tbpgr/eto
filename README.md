@@ -44,7 +44,7 @@ $ eto names
 ~~~bash
 $ eto name 1977
 巳
-$ eto name 1977
+$ eto name 1978
 午
 ~~~
 
@@ -52,7 +52,7 @@ $ eto name 1977
 ~~~bash
 $ eto emoji 1977
 :snake:
-$ eto emoji 1977
+$ eto emoji 1978
 :horse:
 ~~~
 
