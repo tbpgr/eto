@@ -3,6 +3,7 @@
 # Eto
 module Eto
   module_function
+
   # Eto Names
   NAMES = %w(子 丑 寅 卯 辰 巳 午 未 申 酉 戌 亥).freeze
   # Eto Hash ( EtoName => EtoEmoji )
