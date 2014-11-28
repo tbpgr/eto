@@ -27,11 +27,41 @@ $ gem install ruboty-articlegen
 ~~~
 
 ### Commands (Command Line)
+* Eto
+
 |name|args|memo|
 |:--|:--|:--|
 |names|--|全ての十二支を配列で返却|
 |name|year|year の十二支名を取得|
 |emoji|year|year に対応する十二支の emoji を取得|
+
+* Integer
+
+|name|args|memo|
+|:--|:--|:--|
+|eto|--|self の十二支名を取得|
+|eto_emoji|--|self に対応する十二支の emoji を取得|
+
+* Date
+
+|name|args|memo|
+|:--|:--|:--|
+|eto|--|self.year の十二支名を取得|
+|eto_emoji|--|self.year に対応する十二支の emoji を取得|
+
+* DateTime
+
+|name|args|memo|
+|:--|:--|:--|
+|eto|--|self.year の十二支名を取得|
+|eto_emoji|--|self.year に対応する十二支の emoji を取得|
+
+* Time
+
+|name|args|memo|
+|:--|:--|:--|
+|eto|--|self.year の十二支名を取得|
+|eto_emoji|--|self.year に対応する十二支の emoji を取得|
 
 ## Usage ( Command Line Interface)
 ### names
@@ -100,10 +130,24 @@ Eto.emoji(1977) #=> ':snake:'
 Eto.emoji(1978) #=> ':horse:'
 ~~~
 
+### Integer#eto
+~~~ruby
+require 'eto'
+1977.eto # => '巳'
+1978.eto # => '午'
+~~~
+
+### Integer#eto_emoji
+~~~ruby
+require 'eto'
+1977.eto_emoji #=> ':snake:'
+1978.eto_emoji #=> ':horse:'
+~~~
+
 ## Contributing
 
 1. Fork it ( https://github.com/tbpgr/eto/fork )
 1. Create your feature branch (git checkout -b my-new-feature)
 1. Commit your changes (git commit -am 'Add some feature')
 1. Push to the branch (git push origin my-new-feature)
-1. Create a new Pull Reques
+1. Create a new Pull Request
