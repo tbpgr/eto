@@ -2,13 +2,14 @@
 require 'spec_helper'
 require 'eto'
 
+# rubocop: disable LineLength
 describe Eto do
   context :names do
     cases = [
       {
         case_no: 1,
         case_title: 'eto names',
-        expected: Eto::NAMES
+        expected: Eto::JAPANESE_ZODIAC_NAMES
       }
     ]
 
@@ -83,19 +84,36 @@ describe Eto do
         case_no: 1,
         case_title: 'eto name from year',
         year: 1977,
+        japanese_zodiac: true,
         expected: '巳'
       },
       {
         case_no: 2,
         case_title: 'eto name from year',
         year: 1978,
+        japanese_zodiac: true,
         expected: '午'
       },
       {
         case_no: 3,
         case_title: 'not integer year',
         year: 'abc',
+        japanese_zodiac: true,
         expect_error: true
+      },
+      {
+        case_no: 4,
+        case_title: 'eto name from year (japanese_zodiac = false)',
+        year: 1965,
+        japanese_zodiac: false,
+        expected: '乙巳'
+      },
+      {
+        case_no: 5,
+        case_title: 'eto name from year (japanese_zodiac = false)',
+        year: 1977,
+        japanese_zodiac: false,
+        expected: '丁巳'
       }
     ]
 
@@ -109,10 +127,10 @@ describe Eto do
 
           # -- when --
           if c[:expect_error]
-            expect  { Eto.name(c[:year]) }.to raise_error(ArgumentError)
+            expect  { Eto.name(c[:year], c[:japanese_zodiac]) }.to raise_error(ArgumentError)
             next
           end
-          actual = Eto.name(c[:year])
+          actual = Eto.name(c[:year], c[:japanese_zodiac])
 
           # -- then --
           expect(actual).to eq(c[:expected])
@@ -185,3 +203,4 @@ describe Eto do
     end
   end
 end
+# rubocop: enable LineLength
