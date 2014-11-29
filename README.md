@@ -30,7 +30,7 @@ $ gem install ruboty-articlegen
 |name|args|memo|
 |:--|:--|:--|
 |names|--|全ての十二支を配列で返却|
-|name|year|year の十二支名を取得|
+|name|year, japanese_zodiac|year の 十干十二支 or 十二支名を取得|
 |emoji|year|year に対応する十二支の emoji を取得|
 
 ## Usage ( Command Line Interface)
@@ -46,6 +46,10 @@ $ eto name 1977
 巳
 $ eto name 1978
 午
+$ eto name 1965 --not-japanese_zodiac
+丁巳
+$ eto name 1977 --not-japanese_zodiac
+乙巳
 ~~~
 
 ### emoji year
@@ -91,6 +95,12 @@ output
 require 'eto'
 Eto.name(1977) #=> '巳'
 Eto.name(1978) #=> '午'
+Eto.name(1965, true) #=> '巳'
+Eto.name(1977, true) #=> '巳'
+Eto.name(1978, true) #=> '午'
+Eto.name(1965, false) #=> '乙巳'
+Eto.name(1977, false) #=> '丁巳'
+Eto.name(1978, false) #=> '戊午'
 ~~~
 
 ### Eto.emoji(year)

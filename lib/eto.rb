@@ -4,8 +4,10 @@
 module Eto
   module_function
 
-  # Eto Names
-  NAMES = %w(子 丑 寅 卯 辰 巳 午 未 申 酉 戌 亥).freeze
+  # 十干
+  TEN_CALENDAR_SIGNS = %w(庚 辛 壬 癸 甲 乙 丙 丁 戊 己).freeze
+  # 十二支
+  JAPANESE_ZODIAC_NAMES = %w(子 丑 寅 卯 辰 巳 午 未 申 酉 戌 亥).freeze
   # Eto Hash ( EtoName => EtoEmoji )
   HASH = {
     '子' => ':mouse:',
@@ -24,7 +26,7 @@ module Eto
 
   # get eto names
   def names
-    NAMES
+    JAPANESE_ZODIAC_NAMES
   end
 
   # get eto eto_hash
@@ -33,9 +35,12 @@ module Eto
   end
 
   # get eto name from year
-  def name(year)
+  def name(year, japanese_zodiac = true)
     int_year = validate_year(year)
-    NAMES[(int_year + 8) % 12]
+    japanese_zodiac_text = JAPANESE_ZODIAC_NAMES[(int_year + 8) % 12]
+    return japanese_zodiac_text if japanese_zodiac
+    ten_calendar_signs_text = TEN_CALENDAR_SIGNS[(int_year) % 10]
+    "#{ten_calendar_signs_text}#{japanese_zodiac_text}"
   end
 
   # get eto emoji from year

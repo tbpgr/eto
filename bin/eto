@@ -23,9 +23,10 @@ module Eto
     end
 
     desc 'name', 'get eto name from year'
+    option 'njz', type: :boolean, aliases: '--not-japanese_zodiac'
     def name(year = 1970)
       setting_debug_mode
-      puts Eto.name(year)
+      puts Eto.name(year, !options['njz'])
     rescue => e
       output_error_if_debug_mode(e)
       exit(false)
