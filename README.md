@@ -1,12 +1,12 @@
-# Eto
+# :mouse: Eto
 
-Get Eto (Japanese Zodiac) name or emoji.
+Get Eto (Japanese Zodiac :mouse::cow::tiger::rabbit::dragon::snake::horse::sheep::monkey::chicken::dog::boar: ) name or emoji.
 
 [![Gem Version](https://badge.fury.io/rb/eto.svg)](http://badge.fury.io/rb/eto)
 [![Build Status](https://travis-ci.org/tbpgr/eto.png?branch=master)](https://travis-ci.org/tbpgr/eto)
 [![Coverage Status](https://coveralls.io/repos/tbpgr/eto/badge.png)](https://coveralls.io/r/tbpgr/eto)
 
-## Installation
+## :arrow_down: Installation
 
 Add this line to your application's Gemfile:
 
@@ -26,14 +26,14 @@ Or install it yourself as:
 $ gem install ruboty-articlegen
 ~~~
 
-### Commands (Command Line)
+## :cl: Commands (Command Line)
 |name|args|memo|
 |:--|:--|:--|
 |names|--|全ての十二支を配列で返却|
 |name|year, japanese_zodiac|year の 十干十二支 or 十二支名を取得|
 |emoji|year|year に対応する十二支の emoji を取得|
 
-## Usage ( Command Line Interface)
+## :cl::scroll: Usage ( Command Line Interface)
 ### names
 ~~~bash
 $ eto names
@@ -60,7 +60,7 @@ $ eto emoji 1978
 :horse:
 ~~~
 
-## Usage ( require gem )
+## :scroll: Usage ( require gem )
 
 ### Eto.names
 ~~~ruby
@@ -110,7 +110,7 @@ Eto.emoji(1977) #=> ':snake:'
 Eto.emoji(1978) #=> ':horse:'
 ~~~
 
-## Contributing
+## :two_men_holding_hands: Contributing :two_women_holding_hands:
 
 1. Fork it ( https://github.com/tbpgr/eto/fork )
 1. Create your feature branch (git checkout -b my-new-feature)
